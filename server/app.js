@@ -19,7 +19,7 @@ var config = {
   idleTimeoutMillis: 30000 // 30 seconds to try to connect
 };
 
-router.post('/pet/new', function(req, res){
+app.post('/pet/new', function(req, res){
   // This will be replaced with an INSERT statement to SQL
   var newPet = req.body;
 
