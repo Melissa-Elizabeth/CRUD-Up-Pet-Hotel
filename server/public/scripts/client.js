@@ -19,7 +19,7 @@ $.ajax({
       $newPetInfo.append('<td><button class="updateButton">Go</button>');
       $newPetInfo.append('<td><button class="deleteButton">Go</button>');
       $newPetInfo.append('<td><button class="checkInOutButton">In/Out</button>') //create a delete button
-      $('#bookShelf').prepend($newBook);
+      $('#petsTableBody').prepend($newPetInfo);
   }
 });//ends GET ajax
 }//end getDataAddToTable
