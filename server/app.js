@@ -92,7 +92,31 @@ app.get('/petsTable', function(req, res){
       });
     }
   });
+});//ends app.gets
+
+app.get('/dropdown', function(req, res){
+  pool.connect(function(err, client, done){
+    if(err) {
+      // There was an error connecting to the database
+      console.log('Error connecting to database: ', err);
+      res.sendStatus(500);
+    } else {
+      // We connected to the database!!!
+      // Now, we're gonna' git stuff!!!!!
+      client.query('SELECT owners.first_name, owners.last_name FROM owners;', function(err, result){
+        done();
+        if(err) {
+          console.log('Error making the database query: ', err);
+          res.sendStatus(500);
+        } else {
+          res.send(result.rows);
+          console.log(result.rows);
+        }
+      });
+    }
+  });
 });
+
 
 app.listen(port, function() {
   console.log('We are running on port: ', port);

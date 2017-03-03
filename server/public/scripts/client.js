@@ -5,13 +5,13 @@ $(document).ready(function() {
     type: 'GET',
     url: '/petsTable',
     success: function(response){
-      console.log('response', response); //response is an array of pet objects (defined by SQL on client side)
+      // console.log('response', response); //response is an array of pet objects (defined by SQL on client side)
       $('#petsTableBody').empty(); // clears the pets currently in the table
       for (var i = 0; i < response.length; i++) { //Loops through the pets array (the response array)
         var currentPetInfo = response[i]; //More legible for code below
         var $newPetInfo = $('<tr>'); //create a new row for each pet info
         $newPetInfo.data('id', currentPetInfo.id); //adds data ID to the pet object so we can call it later
-        $newPetInfo.append('<td><input value="' + currentPetInfo.first_name + " " + currentPetInfo.last_name + '" class="petOwner"></td>'); //show user the title
+        $newPetInfo.append('<td>' + currentPetInfo.first_name + " " + currentPetInfo.last_name + '</td>'); //show user the title
         $newPetInfo.append('<td><input value="' + currentPetInfo.pet_name + '" class="petName"></td>'); //show user the author
         $newPetInfo.append('<td><input value="' + currentPetInfo.pet_breed + '" class="petBreed"></td>'); //show user the edition
         $newPetInfo.append('<td><input value="' + currentPetInfo.pet_color + '" class="petColor"></td>');//show user the publisher
@@ -19,7 +19,6 @@ $(document).ready(function() {
         $newPetInfo.append('<td><button class="deleteButton">Go</button>');
         $newPetInfo.append('<td><button class="checkInOutButton">In/Out</button>') //create a delete button
         $('#petsTableBody').append($newPetInfo);
-        console.log($newPetInfo);
     }
   }
   });//ends GET ajax
@@ -39,8 +38,6 @@ $(document).ready(function() {
             url: '/owner',
             data: newOwner,
             success: function(response) {
-                console.log(response);
-                getDataAddToTable();
 
             } //end success
         }); //end ajax
@@ -71,4 +68,25 @@ $(document).ready(function() {
             } //end of error
         }); // end of ajax
     } // end of addPetClicked function
+
+// //put this inside of ajax get
+$('#ownerRegisterButton').on('click', addOwnerToDropdown);
+addOwnerToDropdown();
+function addOwnerToDropdown() {
+  $('#ownerName').empty();
+  $('#ownerName').append('<option>Select Something!</option>');
+$.ajax({
+  type: 'GET',
+  url: '/dropdown',
+  success: function(response){
+    console.log('response', response);
+    for (var i = 0; i < response.length; i++) {
+      // $('#ownerName').empty();
+    $('#ownerName').append('<option>' + response[i].first_name + " " + response[i].last_name + '</option>');
+    }
+  } //ends success
+}); //ends ajax
+}
+
+
 }); // end of doc ready
