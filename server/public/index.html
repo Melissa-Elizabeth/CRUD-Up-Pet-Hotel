@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CRUD Up Pet Hotel</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="vendor/jquery.js"></script>
+  <script src="scripts/client.js"></script>
+</head>
+<body>
+  <div id = "mainContainer">
+    <h1>Owners and Pets</h1>
+    <div id = "ownerRegistration">
+    <input id="ownerFirstName" type="text" name="" placeholder="First Name" value="">
+    <input id="ownerLastName" type="text" name="" placeholder ="Last Name" value="">
+    <button id="ownerRegisterButton" type="button" name="button">Register</button>
+  </div>
+  <div id = "pets">
+    <input type="text" id="ownerName" name="" placeholder="Owner Name" value="">
+    <input type="text" id="petName" name="" placeholder ="Pet Name" value="">
+    <input type="text" id="breed" name="" placeholder ="Breed" value="">
+    <input type="text" id="color" name="" placeholder ="Color" value="">
+    <button type="button" name="button" id="addPetButton">Add Pet</button>
+  </div>
+  <div id = "petsTable">
+    <table>
+      <tr>
+      <th>Owner</th>
+      <th>Pet</th>
+      <th>Breed</th>
+      <th>Color</th>
+      <th>Update</th>
+      <th>Delete</th>
+      <th>Check In/Out</th>
+    </tr>
+  </table>
+  </div>
+  </div>
+
+</body>
+</html>
