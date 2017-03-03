@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <title>CRUD Up Pet Hotel</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="vendor/jquery.js"></script>
+  <script src="scripts/client.js"></script>
 </head>
 <body>
   <div id = "mainContainer">
@@ -14,10 +16,11 @@
     <button id=ownerRegisterButton type="button" name="button">Register</button>
   </div>
   <div id = "pets">
-    <input type="text" name="" placeholder="Owner Name" value="">
-    <input type="text" name="" placeholder ="Pet Name" value="">
-    <input type="text" name="" placeholder ="Breed" value="">
-    <button type="button" name="button">Add Pet</button>
+    <input type="text" id="ownerName" name="" placeholder="Owner Name" value="">
+    <input type="text" id="petName" name="" placeholder ="Pet Name" value="">
+    <input type="text" id="breed" name="" placeholder ="Breed" value="">
+    <input type="text" id="color" name="" placeholder ="Color" value="">
+    <button type="button" name="button" id="addPetButton">Add Pet</button>
   </div>
   <div id = "petsTable">
     <table>
