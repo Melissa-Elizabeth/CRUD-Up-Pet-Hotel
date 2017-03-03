@@ -18,6 +18,7 @@ $(document).ready(function() {
         }); //end ajax
     }); // end click
 
+
     $('#addPetButton').on('click', addPetClicked);
 
     function addPetClicked() {
