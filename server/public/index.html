@@ -4,14 +4,16 @@
   <meta charset="utf-8">
   <title>CRUD Up Pet Hotel</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="vendor/jquery.js"></script>
+  <script src="scripts/client.js"></script>
 </head>
 <body>
   <div id = "mainContainer">
     <h1>Owners and Pets</h1>
     <div id = "ownerRegistration">
-    <input type="text" name="" placeholder="First Name" value="">
-    <input type="text" name="" placeholder ="Last Name" value="">
-    <button type="button" name="button">Register</button>
+    <input id="ownerFirstName" type="text" name="" placeholder="First Name" value="">
+    <input id="ownerLastName" type="text" name="" placeholder ="Last Name" value="">
+    <button id="ownerRegisterButton" type="button" name="button">Register</button>
   </div>
   <div id = "pets">
     <input type="text" id="ownerName" name="" placeholder="Owner Name" value="">
